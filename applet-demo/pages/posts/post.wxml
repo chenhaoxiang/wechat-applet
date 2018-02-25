@@ -1,0 +1,52 @@
+
+<view>
+  <!-- 轮播容器 滑块视图容器 -->
+  <swiper indicator-dots='true' autoplay='true' interval='4000'>
+    <swiper-item>
+      <image src='/images/wx.png'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src='/images/vr.png'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src='/images/iqiyi.png'></image>
+    </swiper-item>
+  </swiper>
+
+  <view class='post-container'>
+    <view class='post-author-date'>
+    <!-- 绝对路径 -->
+      <image class='post-author' src='/images/avatar/1.png'></image>
+      <text class='post-date'>2018-2-25</text>
+    </view>
+    <text class='post-title'>课程一</text>
+    <image class='post-image' src='/images/post/crab.png'></image>
+    <text class='post-content'>课程简介......................课程简介课程简介</text>
+    <view class='post-like'>
+    <!-- 相对路径 -->
+      <image class='post-like-image' src='../../images/icon/chat.png'></image>
+      <text class='post-like-font'>120</text>
+      <image class='post-like-image' src='/images/icon/view.png'></image>
+      <text class='post-like-font'>2306</text>
+    </view>
+  </view>
+
+  <view class='post-container'>
+    <view class='post-author-date'>
+    <!-- 绝对路径 -->
+      <image class='post-author' src='/images/avatar/2.png'></image>
+      <text class='post-date'>2018-2-24</text>
+    </view>
+    <text class='post-title'>课程二</text>
+    <image class='post-image' src='/images/post/bl.png'></image>
+    <text class='post-content'>课程二简介......................课程简介课程简介</text>
+    <view class='post-like'>
+    <!-- 相对路径 -->
+      <image class='post-like-image' src='../../images/icon/chat.png'></image>
+      <text class='post-like-font'>20</text>
+      <image class='post-like-image' src='/images/icon/view.png'></image>
+      <text class='post-like-font'>206</text>
+    </view>
+  </view>
+
+</view>

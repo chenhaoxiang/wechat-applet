@@ -1,7 +1,7 @@
 
 <view>
-  <!-- 轮播容器 滑块视图容器 -->
-  <swiper indicator-dots='true' autoplay='true' interval='4000'>
+  <!-- 轮播容器 滑块视图容器 !!!这里注意vertical的false的值,不能只写false，因为只要有值，都会认为是true-->
+  <swiper vertical='{{false}}' indicator-dots='true' autoplay='true' interval='4000'>
     <swiper-item>
       <image src='/images/wx.png'></image>
     </swiper-item>
@@ -16,18 +16,19 @@
   <view class='post-container'>
     <view class='post-author-date'>
     <!-- 绝对路径 -->
-      <image class='post-author' src='/images/avatar/1.png'></image>
-      <text class='post-date'>2018-2-25</text>
+    <!-- !!!控制显隐 wx:if= 注意加{{大括号 -->
+      <image wx:if="{{img_condition}}" class='post-author' src='{{img.author_img}}'></image>
+      <text class='post-date'>{{"hello "+date}}</text>
     </view>
-    <text class='post-title'>课程一</text>
-    <image class='post-image' src='/images/post/crab.png'></image>
-    <text class='post-content'>课程简介......................课程简介课程简介</text>
+    <text class='post-title'>{{title}}</text>
+    <image class='post-image' src='{{img.post_img}}'></image>
+    <text class='post-content'>{{content}}</text>
     <view class='post-like'>
     <!-- 相对路径 -->
       <image class='post-like-image' src='../../images/icon/chat.png'></image>
-      <text class='post-like-font'>120</text>
+      <text class='post-like-font'>{{collect_num}}</text>
       <image class='post-like-image' src='/images/icon/view.png'></image>
-      <text class='post-like-font'>2306</text>
+      <text class='post-like-font'>{{view_num}}</text>
     </view>
   </view>
 

@@ -1,4 +1,6 @@
-
+<!-- 导入模板 相对路径和绝对路径都行-->
+<!-- <import src="post-item/post-item-template.wxml" /> -->
+ <import src="/pages/posts/post-item/post-item-template.wxml" /> 
 <view>
   <!-- 轮播容器 滑块视图容器 !!!这里注意vertical的false的值,不能只写false，因为只要有值，都会认为是true-->
   <swiper vertical='{{false}}' indicator-dots='true' autoplay='true' interval='4000'>
@@ -22,24 +24,25 @@
 当数据改变触发渲染层重新渲染的时候，会校正带有 key 的组件，框架会确保他们被重新排序，而不是重新创建，以确保使组
 件保持自身的状态，并且提高列表渲染时的效率。 -->
 <block wx:key="*this" wx:for="{{posts_key}}" wx:for-item="item" wx:for-index="index">
-  <view class='post-container'>
-    <view class='post-author-date'>
-    <!-- 绝对路径 -->
-    <!-- !!!控制显隐 wx:if= 注意加{{大括号 -->
+
+  <!-- 模板的使用 -->
+  <template is="postItem" data="{{item}}" />
+  <!-- <view class='post-container'>
+    <view class='post-author-date'> 
       <image wx:if="{{item.img_condition}}" class='post-author' src='{{item.avatar}}'></image>
       <text class='post-date'>{{"hello "+item.date}}</text>
     </view>
     <text class='post-title'>{{item.title}}{{index}}</text>
     <image class='post-image' src='{{item.imgSrc}}'></image>
     <text class='post-content'>{{item.content}}</text>
-    <view class='post-like'>
-    <!-- 相对路径 -->
+    <view class='post-like'> 
       <image class='post-like-image' src='../../images/icon/chat.png'></image>
       <text class='post-like-font'>{{item.collection}}</text>
       <image class='post-like-image' src='/images/icon/view.png'></image>
       <text class='post-like-font'>{{item.reding}}</text>
     </view>
-  </view>
+  </view> -->
+
 </block>
 
 </view>

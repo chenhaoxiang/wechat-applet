@@ -2,8 +2,11 @@
  <!-- view 容器和分隔文档作用 -->
 <view class='container'>
   <image  class="user-avatar" src='/images/avatar/132.jpg'></image>
-  <text class='user-name'>hello,谙忆</text>
-  <view class='moto-container'>
-    <text class='moto'>开启小程序之旅</text>
+  <text class='user-name'>你好,谙忆</text>
+  <!-- 事件api地址:https://mp.weixin.qq.com/debug/wxadoc/dev/framework/view/wxml/event.html 
+    bind事件绑定不会阻止冒泡事件向上冒泡，catch事件绑定可以阻止冒泡事件向上冒泡。
+  -->
+  <view class='moto-container' bindtap='onTap'>
+    <text class='moto' bindtap='onTextTap'>开启小程序之旅</text>
   </view>
 </view>

@@ -13,8 +13,13 @@
     </swiper-item>
   </swiper>
 
-<!-- 可将block理解为括号，在里面的代码视为一个整体 -->
-<block wx:for="{{posts_key}}" wx:for-item="item" wx:for-index="index">
+<!-- 可将block理解为括号，在里面的代码视为一个整体 wx:key加上可以提高性能-->
+<!-- wx:key 的值以两种形式提供
+1、wx:key=”property” 其中property是代表在 for 循环的 array 中 item 的某个 property，该 property 的值需要是列表中唯一的字符串或数字，且不能动态改变。类似于字典的key值
+2、wx:key=”*this”， 保留关键字 *this 代表在 for 循环中的 item 本身，这种表示需要 item 本身是一个唯一的字符串或者数字，如：
+当数据改变触发渲染层重新渲染的时候，会校正带有 key 的组件，框架会确保他们被重新排序，而不是重新创建，以确保使组
+件保持自身的状态，并且提高列表渲染时的效率。 -->
+<block wx:key="*this" wx:for="{{posts_key}}" wx:for-item="item" wx:for-index="index">
   <view class='post-container'>
     <view class='post-author-date'>
     <!-- 绝对路径 -->

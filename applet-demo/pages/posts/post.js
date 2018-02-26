@@ -23,20 +23,37 @@ Page({
   onLoad: function (options) {
     console.log("onLoad");
     //从服务器中请求数据来
-    var post_content1={
-      date:"2018-02-26",
-      title:"标题一-",
-      img:{
+    var posts_content=[{
+      date: "2018-02-26",
+      title: "标题-",
+      img: {
         post_img: "/images/post/crab.png",
         author_img: "/images/avatar/1.png"
       },
-      img_condition:true,
-      content:"课程内容简介.......",
-      view_num:"203",
-      collect_num:"120"
-    }
-    // 等同于把post_content1变量赋值到data下去了
-    this.setData(post_content1);
+      img_condition: true,
+      content: "课程内容简介111.......",
+      view_num: "203",
+      collect_num: "120"
+    },
+    {
+      date: "2018-02-25",
+      title: "标题-",
+      img: {
+        post_img: "/images/post/bl.png",
+        author_img: "/images/avatar/2.png"
+      },
+      img_condition: true,
+      content: "课程内容简介222.......",
+      view_num: "125",
+      collect_num: "23"
+    }];
+    // 等同于把post_content1变量中的值平铺赋值到data下去了
+    // this.setData(posts_content1);
+    this.setData({
+        posts_key:posts_content
+      });
+    // 等同于把 posts_key:[...]赋值到data中去
+
   },
 
   /**

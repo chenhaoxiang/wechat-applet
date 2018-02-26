@@ -20,7 +20,7 @@ Page({
     // });//会执行onHide函数 
 
 // 跳转页面后，左上角没有返回
-    wx.redirectTo({
+    wx.redirectTo({ 
       url: '../posts/post',
     });//会执行onUnload函数  页面被关闭了
 
